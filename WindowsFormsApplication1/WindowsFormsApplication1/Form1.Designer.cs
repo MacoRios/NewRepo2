@@ -112,14 +112,14 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(413, 50);
+            this.listBox1.Location = new System.Drawing.Point(9, 44);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(274, 238);
             this.listBox1.TabIndex = 25;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(204, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(507, 83);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(211, 50);
+            this.label3.Location = new System.Drawing.Point(514, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 24);
             this.label3.TabIndex = 19;
@@ -139,10 +139,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 70);
+            this.dataGridView1.Location = new System.Drawing.Point(300, 44);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(141, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(201, 238);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -170,12 +171,14 @@
             this.agregarCancionABibliotecaToolStripMenuItem.Name = "agregarCancionABibliotecaToolStripMenuItem";
             this.agregarCancionABibliotecaToolStripMenuItem.Size = new System.Drawing.Size(172, 20);
             this.agregarCancionABibliotecaToolStripMenuItem.Text = "Agregar Cancion a Biblioteca";
+            this.agregarCancionABibliotecaToolStripMenuItem.Click += new System.EventHandler(this.agregarCancionABibliotecaToolStripMenuItem_Click);
             // 
             // reproducirCancionToolStripMenuItem
             // 
             this.reproducirCancionToolStripMenuItem.Name = "reproducirCancionToolStripMenuItem";
             this.reproducirCancionToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.reproducirCancionToolStripMenuItem.Text = "Reproducir Cancion";
+            this.reproducirCancionToolStripMenuItem.Click += new System.EventHandler(this.reproducirCancionToolStripMenuItem_Click);
             // 
             // opcionesToolStripMenuItem
             // 
@@ -214,7 +217,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(726, 70);
+            this.label2.Location = new System.Drawing.Point(790, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 32;
@@ -223,7 +226,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(726, 100);
+            this.label1.Location = new System.Drawing.Point(790, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 31;
@@ -233,54 +236,59 @@
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(705, 200);
+            this.button5.Location = new System.Drawing.Point(769, 168);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 30;
             this.button5.Text = "Siguiente";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(705, 148);
+            this.button4.Location = new System.Drawing.Point(769, 116);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 29;
             this.button4.Text = "Detener";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(707, 305);
+            this.button3.Location = new System.Drawing.Point(771, 273);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 40);
             this.button3.TabIndex = 28;
             this.button3.Text = "Play";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(707, 363);
+            this.button2.Location = new System.Drawing.Point(771, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
             this.button2.Text = "Anterior";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(705, 239);
+            this.button1.Location = new System.Drawing.Point(769, 207);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 49);
             this.button1.TabIndex = 26;
             this.button1.Text = "Agregar Cancion a Biblioteca";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(84, 290);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(17, 290);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(315, 55);
@@ -290,7 +298,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 452);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(892, 477);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
