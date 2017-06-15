@@ -31,6 +31,8 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            MessageBox.Show("Bienvenido a mi Reproductor: aca puedes escuchar canciones de cualquier carpeta o usar mi modo karaoke con las canciones que puedes ver en la Biblioteca, solo sigue el ritmo de la cancion y repite la letra");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace WindowsFormsApplication1
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\musica.txt");
           
-            //REVISAR ESTA PARTE
+           
             XmlNodeList canciones = xDoc.GetElementsByTagName("canciones");
             XmlNodeList lista = ((XmlElement)canciones[0]).GetElementsByTagName("cancion");
 
@@ -80,11 +82,9 @@ namespace WindowsFormsApplication1
 
             try
             {
-                //REVISAR
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                //C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug
-
-                listBox1.Items.Clear();
+                
+                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");                
+               listBox1.Items.Clear();
                 listBox1.Visible = true;
 
                 StreamReader R = new StreamReader(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\letras\" + label1.Text + ".txt");
@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
             {
                 listBox1.Visible = false;
                 pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                //C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes
+               
 
             }
         }
@@ -114,31 +114,19 @@ namespace WindowsFormsApplication1
             int ind;
             ind = dataGridView1.CurrentRow.Index;
 
-
-
-            //obtiene el valor de la celda
-            // int cont=dataGridView1.RowCount ;
-            // int asu=0;
-
-
             if (ind > 0)
             {
 
-
                 dataGridView1.CurrentCell = dataGridView1[0, ind - 1];
-
-
                 int inu;
-
                 inu = dataGridView1.CurrentRow.Index;
-
                 axWindowsMediaPlayer1.URL = dataGridView1[0, inu].Value.ToString();
                 label1.Text = Path.GetFileNameWithoutExtension(axWindowsMediaPlayer1.URL);
 
                 try
                 {
                     pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                    //I:\reproductor\reproductor\bin\Debug\imagenes }
+                  
                     listBox1.Items.Clear();
                     listBox1.Visible = true;
                     StreamReader R = new StreamReader(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\letras\" + label1.Text + ".txt");
@@ -153,29 +141,23 @@ namespace WindowsFormsApplication1
                 {
                     listBox1.Visible = false;
                     pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                    //C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes
+                   
                 }
-
 
             }
             else
             {
 
                 dataGridView1.CurrentCell = dataGridView1[0, contador];
-
                 int inu;
-
                 inu = dataGridView1.CurrentRow.Index;
-
                 axWindowsMediaPlayer1.URL = dataGridView1[0, inu].Value.ToString();
                 label1.Text = Path.GetFileNameWithoutExtension(axWindowsMediaPlayer1.URL);
 
                 try
                 {
-                    pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                    //C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug
+                    pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");                
                     listBox1.Items.Clear();
-
                     listBox1.Visible = true;
                     StreamReader R = new StreamReader(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\letras\" + label1.Text + ".txt");
                     string r;
@@ -190,9 +172,8 @@ namespace WindowsFormsApplication1
                 {
                     listBox1.Visible = false;
                     pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                    //C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes
+                    
                 }
-
 
             }
         }
@@ -201,13 +182,6 @@ namespace WindowsFormsApplication1
         {
             int ind;
             ind = dataGridView1.CurrentRow.Index;
-
-
-
-            //obtiene el valor de la celda
-            // int cont=dataGridView1.RowCount ;
-            // int asu=0;
-
 
             if (ind < contador)
             {
@@ -226,9 +200,7 @@ namespace WindowsFormsApplication1
 
                 try
                 {
-                    pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                    //I:\reproductor\reproductor\bin\Debug\imagenes }
-
+                    pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");               
                     listBox1.Items.Clear();
                     listBox1.Visible = true;
 
@@ -243,8 +215,7 @@ namespace WindowsFormsApplication1
                 catch (Exception)
                 {
                     listBox1.Visible = false;
-                    pictureBox1.Image = new System.Drawing.Bitmap(@"C: \Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                    //I:\reproductor\reproductor\bin\Debug\imagenes }
+                    pictureBox1.Image = new System.Drawing.Bitmap(@"C: \Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");                 
                 }
 
 
@@ -262,7 +233,7 @@ namespace WindowsFormsApplication1
                 try
                 {
                     pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                    //I:\reproductor\reproductor\bin\Debug\imagenes }
+                 
 
                     listBox1.Items.Clear();
                     listBox1.Visible = true;
@@ -279,7 +250,7 @@ namespace WindowsFormsApplication1
                 {
                     listBox1.Visible = false;
                     pictureBox1.Image = new System.Drawing.Bitmap(@"C: \Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                    //I:\reproductor\reproductor\bin\Debug\imagenes }
+                   
                 }
             }
         }
@@ -291,24 +262,19 @@ namespace WindowsFormsApplication1
 
         private void autorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("HECHO POR MARCO ANTONIO RIOS GARCIA");
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             int ind;
-
             ind = dataGridView1.CurrentRow.Index;
-
             axWindowsMediaPlayer1.URL = dataGridView1[0, ind].Value.ToString();
-
             label1.Text = Path.GetFileNameWithoutExtension(axWindowsMediaPlayer1.URL);
-
             try
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");
-                //I:\reproductor\reproductor\bin\Debug\imagenes }
-
+                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\" + label1.Text + ".jpg");             
                 listBox1.Items.Clear();
                 listBox1.Visible = true;
 
@@ -324,8 +290,7 @@ namespace WindowsFormsApplication1
             {
                 listBox1.Visible = false;
                 pictureBox1.Image = new System.Drawing.Bitmap(@"C: \Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg");
-                //"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\imagenes\biblioteca.jpg
-
+             
             }
         }
 
@@ -650,27 +615,16 @@ namespace WindowsFormsApplication1
             nodecanciones.AppendChild(nodeubicacion);
 
             doc.SelectSingleNode("canciones").AppendChild(nodecanciones);
-
             doc.Save(pathxml);
-
             dataGridView1.Update();
             //
-
-
             //limpiar lista
             cancionesss.Clear();
             //
-
-
             //mostrar lista
 
             XmlDocument xDoc = new XmlDocument();
-
-
             xDoc.Load(@"C:\Users\Marco Rios\Source\Repos\NewRepo2\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\musica.txt");
-
-
-
             XmlNodeList canciones = xDoc.GetElementsByTagName("canciones");
             XmlNodeList lista = ((XmlElement)canciones[0]).GetElementsByTagName("cancion");
 
@@ -680,34 +634,31 @@ namespace WindowsFormsApplication1
                 int i = 0;
 
                 album musicatemp = new album();
-
-
                 XmlNodeList Nombre = nodo.GetElementsByTagName("nombre");
                 XmlNodeList Ubicacion = nodo.GetElementsByTagName("ubicacion");
-
-
-
                 musicatemp.Nombre = Nombre[i].InnerText;
                 musicatemp.Ubicacion = Ubicacion[i].InnerText;
-
-
-
                 cancionesss.Add(musicatemp);
                 // contador = contador + 1;
-
-
             }
-
-
-
             dataGridView1.DataSource = null;
             dataGridView1.Refresh();
-
             dataGridView1.DataSource = cancionesss;
-
             dataGridView1.Columns[0].DisplayIndex = 1;
             dataGridView1.Update();
 
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void misListasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
         }
     }
 }
